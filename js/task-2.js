@@ -33,5 +33,4 @@ const galleryItems = images.map(image => `
   </li>
 `).join('');
 
-// Додаємо всі елементи в контейнер галереї за одну операцію
 galleryContainer.insertAdjacentHTML('beforeend', galleryItems);
