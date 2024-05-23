@@ -24,18 +24,15 @@ createButton.addEventListener('click', () => {
 destroyButton.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
-  boxesContainer.innerHTML = ''; 
-  let size = 30;
+  boxesContainer.innerHTML = ''; // Очищення попередніх елементів
 
-  for (let i = 0; i < amount; i++) {
-    const box = document.createElement('div');
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    box.style.margin = '5px';
-    boxesContainer.appendChild(box);
-    size += 10; // Збільшення розміру для наступного елемента
-  }
+  const boxesHTML = Array.from({ length: amount }, (_, i) => {
+    const size = 30 + i * 10;
+    const color = getRandomHexColor();
+    return `<div style="width: ${size}px; height: ${size}px; background-color: ${color}; margin: 5px;"></div>`;
+  }).join('');
+
+  boxesContainer.innerHTML = boxesHTML; // Додаємо всі елементи одночасно як HTML рядок
 }
 
 

@@ -1,15 +1,15 @@
 
-const widget = document.querySelector(".widget");
+const widget = document.querySelector("body");
 const button = document.querySelector(".btn-change-color");
+const colorSpan = document.querySelector(".color");
 
 button.addEventListener("click", changeColor);
 
 function changeColor(event) {
   event.preventDefault();
-
   const newColor = getRandomHexColor();
-  console.log(newColor)
   widget.style.backgroundColor = newColor;
+  colorSpan.textContent = newColor;
 }
 
 function getRandomHexColor() {
