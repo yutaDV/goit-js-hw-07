@@ -1,6 +1,6 @@
 
 const widget = document.querySelector(".widget");
-const button = document.querySelector(".change-color");
+const button = document.querySelector(".btn-change-color");
 
 button.addEventListener("click", changeColor);
 
